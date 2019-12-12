@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet"> 
+<link href="main.css" rel="stylesheet">
+<script src="/webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
+<title>Chat Room | Login</title>
+</head>
+<body class="bg-light">
+	<div class="container h-100 bg-light">
+		<div class="row h-100 w-80 mx-auto">
+			<div class="col-md-6 mx-auto text-center my-auto bg-dark p-4 border-0 rounded">
+				<h2 class="text-light">Chat Room</h2>
+				<p class="p-2 text-warning w-60 rounded" id="error" data-th-text="${error}"></p>
+				<form action="/login" method="post">
+					<div class="form-group w-100">
+						<input type="text" name="username" id="username" placeholder="Username" class="text-center border-bottom-1 border-left-0 border-top-0 border-right-0 my-2 text-light"><br>
+						<input type="submit" value="Submit" class="text-center bg-primary text-light border-0 rounded my-2 p-2">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

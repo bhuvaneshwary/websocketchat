@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
+<script src="/webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
+<script src="chat.js"></script>
+<title>Chat Room</title>
+</head>
+<body class="bg-light h-100 border">
+
+	<div class="container h-100">
+		<div class="row">
+			<div class="col-md-12 bg-dark rounded mt-1 d-flex justify-content-between p-1">
+				<p class="lead d-inline text-light my-auto ml-2">Chat Room</p>
+				<form class="d-inline mt-1" id="logout" action="/logout" method="post">
+					<div class="form-group">
+						<input type="submit" value="Logout" class="bg-danger border-0 rounded text-light p-2 mr-2">
+					</div>
+				</form>
+			</div>	
+		</div>
+		<div class="row mt-2  d-flex justify-content-between ">
+			<div class="col-md-5 ml-2 bg-secondary rounded">
+				<p class="text-warning mt-2 lead">Welcome <span data-th-text="${username}" id="username"></span></p>
+				<form id="chatform">
+					<div class="form-group p-2">
+						<input type="text" id="chatmessage" placeholder="Send Text" class=" w-100 border-left-0 border-top-0 border-right-0 text-light"><br>
+						<div class="mt-3">
+							<input type="submit" value="Send (Enter)" class="border-0 rounded p-2 bg-success text-light">
+							<input type="button" value="Clear" id="clear" class="border-0 rounded p-2 bg-danger text-light ml-5">
+						</div>
+					</div>
+				</form>
+			</div>				
+			<div class="col-md-6 mr-2 bg-secondary rounded text-light ml-2 h-90" id="chatwall">
+				<button class="border-0 rounded bg-primary text-light p-2 mt-2">Online Users: <span id="usercount"></span></button>
+				<div id="onlineusers" class="bg-info p-2 mt-2 rounded"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
